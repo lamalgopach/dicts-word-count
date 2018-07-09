@@ -11,7 +11,7 @@ def create_dict(file):
 		line = line.rstrip().split(" ")
 		#line = line.split(" ")
 		for word in line:
-			word = word.lower().rstrip(",.!@#$?;:-")
+			word = word.lower().strip(",.!'_[]@#$\"?;:-")
 			poem_dictionary[word] = poem_dictionary.get(word,0) + 1
 	
 	return poem_dictionary
@@ -25,9 +25,9 @@ file1 = open_file("test.txt")
 word_dict = create_dict(file1)
 print_out_dict(word_dict)
 
-# file1 = open_file("test.txt")
-# word_dict = create_dict(file1)
-# print_out_dict(word_dict)
+file1 = open_file("twain.txt")
+word_dict = create_dict(file1)
+print_out_dict(word_dict)
 
 
 
